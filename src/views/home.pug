@@ -9,10 +9,19 @@ html(lang="en")
     body 
         header
             h1 ZOOM 
-        main 
+        main       
             div#welcome
-                form#openRoom
-                    input(type="text" placeholder="write room name" required) 
+                form
+                    input(type="text" placeholder="room name" required)
                     button Enter Room
+            div#call
+                div#myStream
+                    h2
+                    video#myFace(autoplay, playsinline width="400" height="300") 
+                    button#mute mute
+                    button#camera turn off
+                    select#selectCamera 
+                    video#peerFace(autoplay, playsinline width="400" height="300") 
+              
     script(src="/socket.io/socket.io.js") 
     script(src="/public/js/app.js") 
